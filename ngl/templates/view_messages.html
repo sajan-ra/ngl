@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Messages</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Messages</h1>
+        {% if messages %}
+            <ul>
+                {% for message, timestamp in messages %}
+                    <li>
+                        <p>{{ message }}</p>
+                        <small>{{ timestamp }}</small>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No messages yet!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
